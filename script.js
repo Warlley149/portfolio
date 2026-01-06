@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
   toggle.addEventListener('click', ()=>{
     nav.classList.toggle('show');
   });
+  // fechar menu mobile ao clicar em um link
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>nav.classList.remove('show')));
 
   const form = document.getElementById('contactForm');
   const msg = document.getElementById('formMessage');
@@ -40,4 +42,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
       form.reset();
     }, 400);
   });
+
+  // animações suaves ao rolar (reveal)
+  const revealElems = document.querySelectorAll('[data-reveal]');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('reveal');
+          io.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.12});
+    revealElems.forEach(el=>io.observe(el));
+  } else {
+    revealElems.forEach(el=>el.classList.add('reveal'));
+  }
 });
