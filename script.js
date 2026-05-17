@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.disabled = true;
     submitBtn.textContent = '⏳ Abrindo email...';
 
-    // Construir mailto
+// Construir mailto
     const recipient = 'warlleysantos199@gmail.com';
     const subjectEncoded = encodeURIComponent(`Contato do Portfolio: ${subject || name}`);
     const bodyEncoded = encodeURIComponent(
@@ -172,12 +172,19 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     const mailto = `mailto:${recipient}?subject=${subjectEncoded}&body=${bodyEncoded}`;
 
-// Feedback de sucesso
+    // Feedback de sucesso
     formMessage.textContent = '✅ Mensagem enviada com sucesso! Redirecionando...';
     formMessage.classList.add('success');
 
-    // Redirecionar imediatamente para a página de agradecimento
-    window.location.href = 'obrigado.html';
+    // Tentar abrir email (como antes) e depois ir para a página de agradecimento
+    setTimeout(() => {
+      const img = new Image();
+      img.src = mailto;
+
+      setTimeout(() => {
+        window.location.href = 'obrigado.html';
+      }, 500);
+    }, 800);
   });
 
   // ==================== EFEITO PARALLAX SUAVE ====================
