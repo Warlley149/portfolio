@@ -172,20 +172,12 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     const mailto = `mailto:${recipient}?subject=${subjectEncoded}&body=${bodyEncoded}`;
 
-    // Feedback de sucesso
+// Feedback de sucesso
     formMessage.textContent = '✅ Mensagem enviada com sucesso! Redirecionando...';
     formMessage.classList.add('success');
 
-    setTimeout(() => {
-      // Tentar abrir email em background
-      const img = new Image();
-      img.src = mailto;
-      
-      // Redirecionar para página de agradecimento
-      setTimeout(() => {
-        window.location.href = 'obrigado.html';
-      }, 500);
-    }, 800);
+    // Redirecionar imediatamente para a página de agradecimento
+    window.location.href = 'obrigado.html';
   });
 
   // ==================== EFEITO PARALLAX SUAVE ====================
