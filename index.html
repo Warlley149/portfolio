@@ -3,31 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio – Warlley</title>
+  <meta name="description" content="Desenvolvedor web premium. Soluções dinâmicas em HTML, CSS, JavaScript. Transforme sua ideia em realidade.">
+  <title>Warlley | Desenvolvedor Web Profissional – Soluções Modernas</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" id="siteHeader">
     <div class="container header-inner">
-      <h1 class="site-title">Warlley</h1>
+      <h1 class="site-title">W<span class="accent-text">.</span></h1>
       <button id="menuToggle" class="menu-toggle" aria-label="Abrir menu">☰</button>
       <nav id="mainNav" class="main-nav">
         <a href="#about">Sobre</a>
         <a href="#projects">Projetos</a>
         <a href="#contact">Contato</a>
       </nav>
+      <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema" title="Modo claro/escuro">🌙</button>
     </div>
   </header>
 
   <main>
     <section class="hero" data-reveal>
       <div class="container hero-inner">
-        <img src="img/Fotodeperfil.jpg" alt="Foto de perfil" class="profile">
+        <div class="profile-wrapper">
+          <div class="profile-glow"></div>
+          <img src="img/Fotodeperfil.jpg" alt="Foto de perfil" class="profile">
+        </div>
         <div class="hero-content">
-          <h2>Olá, eu sou o Warlley</h2>
-          <p>Desenvolvedor web interessado em criar experiências simples e bonitas. Aqui está um pouco do meu trabalho e como me contatar.</p>
+          <div class="hero-badge">🚀 Desenvolvedor Full-Stack em Ascensão</div>
+          <h2 class="hero-title">Transforme Ideias em <span class="gradient-text">Código Vibrante</span></h2>
+          <p class="hero-subtitle">Crio experiências web dinâmicas e envolventes que convertem visitas em resultados. HTML5, CSS3, JavaScript avançado — tudo com design moderno e funcionalidade impecável.</p>
           <div class="hero-actions">
-            <a href="#projects" class="btn">Ver projetos</a>
+            <a href="#projects" class="btn btn-primary">Explorar Portfólio</a>
+            <a href="#contact" class="btn btn-secondary">Solicitar Orçamento</a>
             <div class="social">
               <a href="https://github.com/Warlley149" target="_blank" rel="noopener" aria-label="GitHub">
                 <!-- GitHub SVG -->
@@ -51,71 +58,179 @@
       </div>
     </section>
 
-    <section id="about" class="about container">
-      <h3 class="text-center">Sobre mim</h3>
-      <p>Tenho 18 anos, sou de São Lourenço da Mata (PE) e atuo como Jovem Aprendiz, trabalhando como Assistente Administrativo. Curso Análise e Desenvolvimento de Sistemas e Técnico em Mecatrônica, conciliando tecnologia, automação e organização. Tenho cursos na área administrativa, experiência com edição de vídeos e imagens e valorizo o aprendizado constante, o trabalho em equipe e a evolução prática por meio de experiências reais.</p>
+    <section id="about" class="about container" data-reveal>
+      <div class="about-wrapper">
+        <div class="about-content">
+          <h3 class="section-title">Quem Sou Eu?</h3>
+          <p class="about-intro"><strong>Jovem desenvolvedor apaixonado por tecnologia,</strong> combinando criatividade e lógica para criar soluções web memoráveis.</p>
+          <p>Com 18 anos, estudando <strong>Análise e Desenvolvimento de Sistemas</strong> e <strong>Mecatrônica</strong>, trago uma perspectiva única: entendo tanto o lado criativo quanto o técnico dos projetos. Atuo como Assistente Administrativo, o que me deu experiência em gestão, comunicação e atenção ao detalhe.</p>
+          <p>Meu foco? Transformar ideias complexas em interfaces intuitivas e funcionalidades robustas que seus usuários adoram.</p>
+        </div>
+        <div class="stats-container">
+          <div class="stat-box">
+            <div class="stat-number">18</div>
+            <div class="stat-label">Anos</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">6+</div>
+            <div class="stat-label">Tecnologias</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Dedicado</div>
+          </div>
+        </div>
+      </div>
+      <h4 class="skills-title">Competências Técnicas</h4>
       <ul class="skills">
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>JavaScript</li>
-        <li>C/C++</li>
-        <li>Automação</li>
-        <li>Eletrônica</li>
+        <li><span class="skill-badge">HTML5</span></li>
+        <li><span class="skill-badge">CSS3</span></li>
+        <li><span class="skill-badge">JavaScript</span></li>
+        <li><span class="skill-badge">TypeScript</span></li>
+        <li><span class="skill-badge">Astro</span></li>
+        <li><span class="skill-badge">Next.js</span></li>
+        <li><span class="skill-badge">React</span></li>
+        <li><span class="skill-badge">Tailwind</span></li>
+        <li><span class="skill-badge">C/C++</span></li>
+        <li><span class="skill-badge">Arduino</span></li>
+        <li><span class="skill-badge">ESP32</span></li>
+        <li><span class="skill-badge">Automação Industrial</span></li>
+        <li><span class="skill-badge">Eletrônica Digital</span></li>
+        <li><span class="skill-badge">Design Responsivo</span></li>
+        <li><span class="skill-badge">Edição Multimídia</span></li>
       </ul>
     </section>
 
-    <section id="education" class="formations container">
-      <h3 class="text-center">Formações</h3>
+    <section id="education" class="formations container" data-reveal>
+      <h3 class="section-title text-center">📚 Minha Jornada de Aprendizado</h3>
       <div class="education-list">
         <div class="education-item">
-          <strong>Análise e Desenvolvimento de Sistemas / FICR</strong>
-          <div class="edu-meta">2025 — 2027 · Recife</div>
-          <p>Formação em andamento em Análise e Desenvolvimento de Sistemas, com estudos voltados a lógica de programação, algoritmos, banco de dados, desenvolvimento web e engenharia de software. Busco unir técnica, organização e criatividade na construção de soluções digitais.</p>
+          <div class="edu-icon">💻</div>
+          <strong>Análise e Desenvolvimento de Sistemas</strong>
+          <div class="edu-institution">FICR - Recife</div>
+          <div class="edu-meta">2025 — 2027</div>
+          <p>Dominando lógica de programação, algoritmos, banco de dados, desenvolvimento web fullstack e engenharia de software. Construindo soluções digitais que unem técnica impecável com criatividade.</p>
+          <div class="edu-tags">
+            <span>Programação</span>
+            <span>Banco de Dados</span>
+            <span>Engenharia</span>
+          </div>
         </div>
         <div class="education-item">
-          <strong>Técnico em Mecatrônica / SENAI</strong>
-          <div class="edu-meta">2025 — 2026 · Recife</div>
-          <p>Formação técnica voltada à integração entre mecânica, eletrônica e automação. Experiência com circuitos elétricos e eletrônicos, sensores, atuadores, comandos elétricos, lógica de controle e introdução à programação e automação industrial. Foco na análise de sistemas, solução de problemas e funcionamento prático de máquinas e processos.</p>
+          <div class="edu-icon">⚙️</div>
+          <strong>Técnico em Mecatrônica</strong>
+          <div class="edu-institution">SENAI - Recife</div>
+          <div class="edu-meta">2025 — 2026</div>
+          <p>Dominando a integração entre mecânica, eletrônica e automação. Trabalho com circuitos, sensores, atuadores e programação de sistemas de controle — o futuro da tecnologia!</p>
+          <div class="edu-tags">
+            <span>Eletrônica</span>
+            <span>Automação</span>
+            <span>Controle</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="projects container">
-      <h3>Projetos</h3>
+    <section id="projects" class="projects container" data-reveal>
+      <h3 class="section-title">🎨 Projetos em Destaque</h3>
+      <p class="projects-intro">Cada projeto é uma oportunidade de demonstrar qualidade, inovação e compromisso com excelência.</p>
       <div class="project-list">
-        <article class="project">
-          <h4>Projeto acadêmico (Web)</h4>
-          <p>Desenvolvimento de uma página web como atividade acadêmica, com foco em estrutura semântica, estilização e responsividade. O projeto reforça boas práticas de HTML e CSS e organização visual do conteúdo.
-Tecnologias: HTML, CSS, JAVASCRIPT.</p>
-          <a href="https://github.com/Warlley149" class="link">Ver no GitHub</a>
+        <article class="project project-card" data-project="1">
+          <div class="project-badge">Profissional</div>
+          <div class="project-icon">🌐</div>
+          <h4>Site Web Responsivo</h4>
+          <p>Página web moderna feita para empresa de salgados,
+            com design responsivo, navegação fluida e otimização para SEO. Desenvolvido usando framework Astro, Tailwind e Typescript para criar uma experiência de usuário envolvente e funcional.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Astro</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">TypeScript</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Warlley149/w.j.fsalgados.git" target="_blank" class="link">GitHub</a>
+            <a href="https://w-j-fsalgados.vercel.app/" class="link">Demo</a>
+          </div>
         </article>
+        <article class="project project-card" data-project="2">
+          <div class="project-badge">Em Breve</div>
+          <div class="project-icon">🚀</div>
+          <h4>BilioTech</h4>
+          <p>Projeto acadêmico com foco em Java e SQL Server, 
+            desenvolvendo um sistema bibliotecário como exemplo.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">SQL Server</span>
+            <span class="tech-tag">Spring Boot</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Warlley149/BiblioTech.git" class="link" target="_blank">GitHub</a>
+          </div>
+        </article>
+      </div>
+      <div class="cta-projects">
+        <p>Quer um projeto assim para seu negócio?</p>
+        <a href="#contact" class="btn btn-primary">Vamos Conversar!</a>
       </div>
     </section>
 
-    <section id="contact" class="contact container">
-      <h3>Contato</h3>
-      <form id="contactForm" novalidate>
-        <label>
-          Nome
-          <input type="text" name="name" required>
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" required>
-        </label>
-        <label>
-          Mensagem
-          <textarea name="message" rows="4" required></textarea>
-        </label>
-        <button type="submit" class="btn">Enviar</button>
-        <p id="formMessage" class="form-message" aria-live="polite"></p>
-      </form>
+    <section id="contact" class="contact container" data-reveal>
+      <h3 class="section-title">💬 Vamos Conversar?</h3>
+      <p class="contact-intro">Tem uma ideia incrível? Quer transformar seu projeto em realidade? Me mande uma mensagem — respondo rapidinho! 🚀</p>
+      <div class="contact-wrapper">
+        <div class="contact-methods">
+          <div class="method">
+            <div class="method-icon">📧</div>
+            <strong>Email</strong>
+            <a href="mailto:warlleysantos199@gmail.com">warlleysantos199@gmail.com</a>
+          </div>
+          <div class="method">
+            <div class="method-icon">💬</div>
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/5581996089272" target="_blank">+55 81 99608-9272</a>
+          </div>
+          <div class="method">
+            <div class="method-icon">🔗</div>
+            <strong>Redes Sociais</strong>
+            <div class="social-quick">
+              <a href="https://github.com/Warlley149" target="_blank">GitHub</a>
+              <a href="https://www.linkedin.com/in/warlley-santos-ab97002ab/" target="_blank">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+        <form id="contactForm" novalidate class="contact-form">
+          <label>
+            Nome
+            <input type="text" name="name" required placeholder="Seu nome completo">
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required placeholder="seu@email.com">
+          </label>
+          <label>
+            Assunto (Opcional)
+            <input type="text" name="subject" placeholder="Ex: Solicitar orçamento">
+          </label>
+          <label>
+            Mensagem
+            <textarea name="message" required placeholder="Conte-me sobre seu projeto..."></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+          <p id="formMessage" class="form-message"></p>
+        </form>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>Feito por Warlley — &copy; <span id="year"></span></p>
+      <p>© <span id="year"></span> Warlley Santos. Desenvolvendo o futuro, uma linha de código por vez.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/Warlley149" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/warlley-santos-ab97002ab/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/warlley149" target="_blank" rel="noopener">Instagram</a>
+      </div>
     </div>
   </footer>
 
