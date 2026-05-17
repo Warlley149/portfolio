@@ -178,8 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Tentar abrir email (como antes) e depois ir para a página de agradecimento
     setTimeout(() => {
-      const img = new Image();
-      img.src = mailto;
+      window.location.href = mailto;
 
       setTimeout(() => {
         window.location.href = 'obrigado.html';
