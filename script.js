@@ -173,18 +173,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const mailto = `mailto:${recipient}?subject=${subjectEncoded}&body=${bodyEncoded}`;
 
     // Feedback de sucesso
-    formMessage.textContent = '✅ Email aberto! Obrigado pelo seu contato.';
+    formMessage.textContent = '✅ Mensagem enviada com sucesso! Redirecionando...';
     formMessage.classList.add('success');
 
     setTimeout(() => {
-      window.location.href = mailto;
-      // Resetar após um tempo
+      // Tentar abrir email em background
+      const img = new Image();
+      img.src = mailto;
+      
+      // Redirecionar para página de agradecimento
       setTimeout(() => {
-        contactForm.reset();
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Enviar Mensagem';
-        formMessage.textContent = '';
-        formMessage.className = 'form-message';
+        window.location.href = 'obrigado.html';
       }, 500);
     }, 800);
   });

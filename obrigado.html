@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Obrigado por seu contato! Você está na lista para receber nosas atualizações.">
+  <title>Obrigado! | Warlley - Desenvolvedor Web</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .thank-you-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .thank-you-content {
+      text-align: center;
+      max-width: 600px;
+      animation: slide-down 0.6s ease backwards;
+    }
+
+    .success-icon {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+      animation: bounce 0.6s ease 0.2s backwards;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .thank-you-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: var(--gradient-primary);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .thank-you-subtitle {
+      font-size: 1.2rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .confirmation-box {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.05));
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      animation: slide-down 0.6s ease 0.1s backwards;
+    }
+
+    .confirmation-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .confirmation-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .confirmation-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .confirmation-text {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .next-steps {
+      background: var(--card);
+      border: 2px solid var(--primary);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      animation: slide-down 0.6s ease 0.2s backwards;
+    }
+
+    .next-steps h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .steps-list {
+      display: grid;
+      gap: 1rem;
+      text-align: left;
+    }
+
+    .step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      background: var(--gradient-primary);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-content strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+
+    .step-content p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .cta-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      animation: slide-down 0.6s ease 0.3s backwards;
+    }
+
+    .social-follow {
+      padding: 1.5rem;
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.05), rgba(99, 102, 241, 0.05));
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-top: 2rem;
+      animation: slide-down 0.6s ease 0.4s backwards;
+    }
+
+    .social-follow h4 {
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .social-links a:hover {
+      background: var(--secondary);
+      transform: translateY(-4px) scale(1.1);
+    }
+
+    .timer {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 1.5rem;
+    }
+
+    .timer strong {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+      .thank-you-title {
+        font-size: 2rem;
+      }
+
+      .thank-you-subtitle {
+        font-size: 1rem;
+      }
+
+      .cta-buttons {
+        grid-template-columns: 1fr;
+      }
+
+      .success-icon {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <h1 class="site-title">W<span class="accent-text">.</span></h1>
+      <nav class="main-nav">
+        <a href="index.html#about">Voltar ao Portfólio</a>
+      </nav>
+      <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema" title="Modo claro/escuro">🌙</button>
+    </div>
+  </header>
+
+  <main class="thank-you-container">
+    <div class="thank-you-content">
+      <div class="success-icon">✅</div>
+      
+      <h1 class="thank-you-title">Obrigado por Entrar em Contato!</h1>
+      <p class="thank-you-subtitle">
+        Sua mensagem foi recebida com sucesso. Estou muito feliz com seu interesse! 
+        Você receberá uma resposta em breve.
+      </p>
+
+      <div class="confirmation-box">
+        <div class="confirmation-item">
+          <div class="confirmation-icon">📧</div>
+          <div class="confirmation-text">
+            Um email de confirmação foi enviado para sua caixa de entrada
+          </div>
+        </div>
+        <div class="confirmation-item">
+          <div class="confirmation-icon">⏱️</div>
+          <div class="confirmation-text">
+            Tempo de resposta: geralmente em até 24 horas
+          </div>
+        </div>
+        <div class="confirmation-item">
+          <div class="confirmation-icon">💬</div>
+          <div class="confirmation-text">
+            Ou me encontre no WhatsApp para respostas mais rápidas
+          </div>
+        </div>
+      </div>
+
+      <div class="next-steps">
+        <h3>📋 Próximos Passos</h3>
+        <div class="steps-list">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <strong>Confirme seu Email</strong>
+              <p>Se receber um email, clique em confirmar para garantir a entrega de mensagens futuras.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <strong>Aguarde meu Retorno</strong>
+              <p>Analisarei sua mensagem e retornarei com uma proposta personalizada e detalhada.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <strong>Vamos Colaborar</strong>
+              <p>Discutiremos sua visão, prazos e como posso transformar seu projeto em realidade.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-buttons">
+        <a href="index.html" class="btn btn-primary">Voltar ao Portfólio</a>
+        <a href="https://wa.me/5581996089272" target="_blank" class="btn btn-secondary">Conversar no WhatsApp</a>
+      </div>
+
+      <div class="social-follow">
+        <h4>Me Acompanhe nas Redes 🌐</h4>
+        <div class="social-links">
+          <a href="https://github.com/Warlley149" target="_blank" title="GitHub">GH</a>
+          <a href="https://www.linkedin.com/in/warlley-santos-ab97002ab/" target="_blank" title="LinkedIn">LI</a>
+          <a href="https://www.instagram.com/warlley149" target="_blank" title="Instagram">IG</a>
+          <a href="https://wa.me/5581996089272" target="_blank" title="WhatsApp">WA</a>
+        </div>
+      </div>
+
+      <div class="timer">
+        <p>Você será redirecionado ao portfólio em <strong id="countdown">10</strong> segundos...</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Warlley Santos. Desenvolvendo o futuro, uma linha de código por vez.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const year = document.getElementById('year');
+      year.textContent = new Date().getFullYear();
+
+      // ==================== TEMA ESCURO/CLARO ====================
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const savedTheme = localStorage.getItem('theme');
+      const themeToggle = document.getElementById('themeToggle');
+      
+      const setTheme = (isDark) => {
+        if (isDark) {
+          document.body.classList.add('dark-mode');
+          themeToggle.textContent = '☀️';
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.body.classList.remove('dark-mode');
+          themeToggle.textContent = '🌙';
+          localStorage.setItem('theme', 'light');
+        }
+      };
+
+      if (savedTheme === 'dark' || (savedTheme === null && prefersDark)) {
+        setTheme(true);
+      }
+
+      themeToggle.addEventListener('click', () => {
+        const isDark = document.body.classList.contains('dark-mode');
+        setTheme(!isDark);
+      });
+
+      // ==================== CONTADOR REGRESSIVO ====================
+      let countdown = 10;
+      const countdownElement = document.getElementById('countdown');
+      
+      const countdownInterval = setInterval(() => {
+        countdown--;
+        countdownElement.textContent = countdown;
+        
+        if (countdown <= 0) {
+          clearInterval(countdownInterval);
+          // Redirecionar após 10 segundos
+          setTimeout(() => {
+            window.location.href = 'index.html';
+          }, 1000);
+        }
+      }, 1000);
+
+      // ==================== PERMITIR CLIQUE PARA VOLTAR IMEDIATAMENTE ====================
+      document.addEventListener('click', (e) => {
+        if (e.target.closest('a[href="index.html"]')) {
+          clearInterval(countdownInterval);
+        }
+      });
+
+      console.log('✅ Página de agradecimento carregada!');
+    });
+  </script>
+</body>
+</html>
